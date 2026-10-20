@@ -1,499 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BEST BUY SUBSCRIPTIONS | Digital Store</title>
-<meta name="description" content="Shop digital subscriptions at affordable prices with BEST BUY SUBSCRIPTIONS.">
+  <title>BEST BUY SUBSCRIPTIONS</title>
+  <meta name="description" content="Shop your digital subscriptions at BEST BUY SUBSCRIPTIONS.">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    :root {
+      --purple: #8b5cf6;
+      --gold: #ffd166;
+      --bg: #090711;
+      --card: #171326;
+      --text: #ffffff;
+      --muted: #b9b3ca;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  margin: 0;
-  background: #0b0b14;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header {
-  background: #141424;
-  padding: 22px 16px;
-  border-bottom: 1px solid #292944;
-  text-align: center;
-}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
 
-.site-logo {
-  display: block;
-  width: 145px;
-  height: 145px;
-  object-fit: contain;
-  margin: 0 auto 12px;
-  border-radius: 18px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #a78bfa;
-}
+    header {
+      background: rgba(13, 10, 25, 0.97);
+      border-bottom: 1px solid #302442;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-header p {
-  color: #b9b9ca;
-  margin-bottom: 0;
-}
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 14px;
-  background: #10101d;
-  border-bottom: 1px solid #292944;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--gold);
+    }
 
-nav a {
-  color: #d8ccff;
-  text-decoration: none;
-  font-size: 14px;
-}
+    .brand img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
 
-.hero {
-  text-align: center;
-  padding: 42px 18px 25px;
-}
+    .nav a:last-child {
+      background: var(--purple);
+      padding: 9px 14px;
+      border-radius: 9px;
+      font-weight: bold;
+      font-size: 13px;
+    }
 
-.badge {
-  display: inline-block;
-  background: #22213a;
-  color: #c4b5fd;
-  padding: 9px 14px;
-  border-radius: 25px;
-  font-size: 12px;
-}
+    .hero {
+      text-align: center;
+      padding: 75px 20px 65px;
+      background:
+        radial-gradient(ellipse at top, #33205c 0%, transparent 65%);
+    }
 
-.hero h1 {
-  font-size: 34px;
-  margin: 20px 0 12px;
-}
+    .badge {
+      display: inline-block;
+      border: 1px solid #7250a7;
+      background: #211537;
+      color: var(--gold);
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
 
-.hero h1 span {
-  color: #a78bfa;
-}
+    .hero h1 {
+      font-size: clamp(32px, 7vw, 60px);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
 
-.hero p {
-  color: #b8b8c9;
-  line-height: 1.7;
-}
+    .hero h1 span {
+      color: var(--gold);
+    }
 
-.section-title {
-  padding: 0 16px;
-  margin-top: 30px;
-}
+    .hero p {
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 25px;
+    }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px;
-  padding: 16px;
-}
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, #a78bfa, #7041d8);
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      text-align: center;
+    }
 
-.card {
-  background: #171726;
-  border: 1px solid #303047;
-  border-radius: 15px;
-  padding: 17px 12px;
-}
+    .button:hover {
+      opacity: 0.9;
+    }
 
-.icon {
-  font-size: 34px;
-}
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 45px 20px;
+    }
 
-.card h3 {
-  font-size: 16px;
-  margin: 12px 0 7px;
-}
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.card p {
-  font-size: 13px;
-  color: #aaaabd;
-  min-height: 28px;
-  line-height: 1.5;
-}
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
 
-.price {
-  font-size: 21px;
-  font-weight: bold;
-  color: #c4b5fd;
-  margin: 14px 0;
-}
+    .section-title p {
+      color: var(--muted);
+    }
 
-button {
-  border: 0;
-  background: #8b5cf6;
-  color: #ffffff;
-  padding: 12px 10px;
-  border-radius: 9px;
-  width: 100%;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-}
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
 
-button:hover {
-  background: #7c3aed;
-}
+    .product {
+      background: linear-gradient(145deg, #1c1730, #100d1c);
+      border: 1px solid #332748;
+      border-radius: 16px;
+      padding: 23px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
 
-.order {
-  margin: 16px;
-  background: #171726;
-  border: 1px solid #303047;
-  border-radius: 15px;
-  padding: 20px;
-}
+    .product:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple);
+    }
 
-.order h2 {
-  margin-top: 0;
-}
+    .product-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      background: #2b2044;
+      border-radius: 14px;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
 
-label {
-  display: block;
-  margin: 14px 0 7px;
-  color: #dddded;
-}
+    .product h3 {
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
 
-input,
-select {
-  width: 100%;
-  padding: 13px;
-  border-radius: 8px;
-  border: 1px solid #42425a;
-  background: #0d0d18;
-  color: #ffffff;
-  font-size: 15px;
-}
+    .product p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 13px;
+    }
 
-.total {
-  font-size: 22px;
-  color: #c4b5fd;
-  font-weight: bold;
-  margin: 18px 0;
-}
+    .price {
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
 
-.note {
-  color: #b5b5c6;
-  font-size: 12px;
-  line-height: 1.7;
-}
+    .product .button {
+      width: 100%;
+    }
 
-footer {
-  text-align: center;
-  padding: 28px 15px;
-  color: #9292a8;
-  font-size: 13px;
-  border-top: 1px solid #292944;
-  margin-top: 35px;
-}
+    .order-box {
+      max-width: 600px;
+      margin: auto;
+      background: var(--card);
+      border: 1px solid #38294f;
+      border-radius: 18px;
+      padding: 25px;
+    }
 
-@media (min-width: 700px) {
-  .products {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    max-width: 1000px;
-    margin: auto;
-  }
+    .order-box h2 {
+      margin-bottom: 8px;
+    }
 
-  .hero h1 {
-    font-size: 48px;
-  }
+    .order-box > p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
 
-  .site-logo {
-    width: 180px;
-    height: 180px;
-  }
-}
-</style>
+    label {
+      display: block;
+      font-size: 14px;
+      margin: 13px 0 6px;
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      background: #0d0a17;
+      border: 1px solid #423453;
+      color: white;
+      border-radius: 9px;
+      padding: 12px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--purple);
+    }
+
+    select option {
+      background: #171326;
+    }
+
+    .summary {
+      margin: 18px 0;
+      padding: 15px;
+      background: #0e0b19;
+      border: 1px solid #38294f;
+      border-radius: 10px;
+    }
+
+    .summary div {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 5px 0;
+    }
+
+    .summary strong {
+      color: var(--gold);
+    }
+
+    .order-box .button {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .notice {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid #302442;
+      padding: 20px;
+      border-radius: 13px;
+    }
+
+    .feature h3 {
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1px solid #302442;
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 13px;
+      }
+
+      .brand img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero {
+        padding: 55px 17px;
+      }
+
+      .section {
+        padding: 35px 15px;
+      }
+
+      .product {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <img
-    src="best-buy-logo.jpeg"
-    alt="BEST BUY SUBSCRIPTIONS Logo"
-    class="site-logo"
-  >
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">
+        <img
+          src="best-buy-logo.png"
+          alt="Best Buy Logo"
+          onerror="this.style.display='none'"
+        >
+        <span>BEST BUY SUBSCRIPTIONS</span>
+      </a>
 
-  <div class="logo">BEST BUY SUBSCRIPTIONS</div>
-  <p>Your Digital World, One Place!</p>
-</header>
+      <a href="#products">Shop Now</a>
+    </nav>
+  </header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#products">Shop</a>
-  <a href="#order">Order Now</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <main>
+    <section class="hero" id="home">
+      <div class="badge">✨ YOUR DIGITAL WORLD, ONE PLACE!</div>
 
-<main id="home">
+      <h1>
+        Your Favourite<br>
+        <span>Subscriptions</span>
+      </h1>
 
-  <section class="hero">
-    <span class="badge">PREMIUM DIGITAL SUBSCRIPTIONS</span>
+      <p>
+        Welcome to BEST BUY SUBSCRIPTIONS.
+        Explore our digital subscription options and place your order easily.
+      </p>
 
-    <h1>Upgrade Your <span>Digital Life.</span></h1>
+      <a href="#products" class="button">Explore Products →</a>
+    </section>
 
-    <p>
-      Shop your favourite digital subscriptions at affordable prices.<br>
-      Simple ordering. Convenient payment.
-    </p>
-  </section>
-
-  <h2 class="section-title" id="products">🛍️ Our Products</h2>
-
-  <div class="products" id="productGrid"></div>
-
-  <section class="order" id="order">
-    <h2>🛒 Place Your Order</h2>
-
-    <p class="note">
-      Choose your product and enter your contact details to continue.
-    </p>
-
-    <form id="orderForm">
-
-      <label for="product">Select Product</label>
-      <select id="product" required></select>
-
-      <div class="total">
-        Total: GH₵<span id="total">60</span>
+    <section class="section" id="products">
+      <div class="section-title">
+        <h2>Our Products</h2>
+        <p>Choose a product to start your order.</p>
       </div>
 
-      <label for="customer">Your Name</label>
-      <input
-        id="customer"
-        type="text"
-        required
-        placeholder="Enter your name"
-      >
+      <div class="products">
 
-      <label for="contactNumber">WhatsApp Number</label>
-      <input
-        id="contactNumber"
-        type="tel"
-        required
-        placeholder="e.g. 0241234567"
-      >
+        <article class="product">
+          <div class="product-icon">🎵</div>
+          <h3>Apple Music</h3>
+          <p>3-month subscription</p>
+          <div class="price">GH₵60</div>
+          <button class="button" onclick="chooseProduct('Apple Music - 3 Months', 60)">
+            Buy Now
+          </button>
+        </article>
 
-      <label for="email">Email (optional)</label>
-      <input
-        id="email"
-        type="email"
-        placeholder="you@example.com"
-      >
+        <article class="product">
+          <div class="product-icon">🎬</div>
+          <h3>Netflix Login</h3>
+          <p>3-month subscription</p>
+          <div class="price">GH₵60</div>
+          <button class="button" onclick="chooseProduct('Netflix Login - 3 Months', 60)">
+            Buy Now
+          </button>
+        </article>
 
-      <button type="submit">Continue to Payment →</button>
+        <article class="product">
+          <div class="product-icon">☁️</div>
+          <h3>iCloud Storage</h3>
+          <p>Choose your preferred storage plan below.</p>
 
-    </form>
+          <label for="icloudPlan">Storage plan</label>
+          <select id="icloudPlan" onchange="updateIcloud()">
+            <option value="50GB|60">50GB — GH₵60</option>
+            <option value="200GB|90">200GB — GH₵90</option>
+            <option value="1TB|150">1TB — GH₵150</option>
+            <option value="2TB|230">2TB — GH₵230</option>
+          </select>
 
-    <p class="note">
-      Orders are not confirmed until payment is verified.
-      Only purchase subscriptions through legitimate, authorized methods.
-    </p>
-  </section>
+          <div class="price" id="icloudPrice">GH₵60</div>
+          <button class="button" onclick="buyIcloud()">Buy Now</button>
+        </article>
 
-</main>
+        <article class="product">
+          <div class="product-icon">👻</div>
+          <h3>Snapchat Plus</h3>
+          <p>3-month subscription</p>
+          <div class="price">GH₵75</div>
+          <button class="button" onclick="chooseProduct('Snapchat Plus - 3 Months', 75)">
+            Buy Now
+          </button>
+        </article>
 
-<footer id="contact">
-  <strong>BEST BUY SUBSCRIPTIONS</strong>
-  <p>Your Digital World, One Place!</p>
-  <p>All prices are in Ghana cedis (GH₵).</p>
-  <p>Need help? Use the live chat button on this page.</p>
-</footer>
+        <article class="product">
+          <div class="product-icon">📺</div>
+          <h3>Prime Video</h3>
+          <p>Digital subscription</p>
+          <div class="price">GH₵70</div>
+          <button class="button" onclick="chooseProduct('Prime Video', 70)">
+            Buy Now
+          </button>
+        </article>
 
-<script>
-const products = [
-  {
-    name: "Apple Music",
-    detail: "3 Months",
-    price: 60,
-    icon: "🍎"
-  },
-  {
-    name: "Netflix Login",
-    detail: "3 Months",
-    price: 60,
-    icon: "🎬"
-  },
-  {
-    name: "iCloud Storage",
-    detail: "50GB",
-    price: 60,
-    icon: "☁️"
-  },
-  {
-    name: "iCloud Storage",
-    detail: "200GB",
-    price: 90,
-    icon: "☁️"
-  },
-  {
-    name: "iCloud Storage",
-    detail: "1TB",
-    price: 150,
-    icon: "☁️"
-  },
-  {
-    name: "iCloud Storage",
-    detail: "2TB",
-    price: 230,
-    icon: "☁️"
-  },
-  {
-    name: "Snapchat Plus",
-    detail: "3 Months",
-    price: 75,
-    icon: "👻"
-  },
-  {
-    name: "Prime Video",
-    detail: "Subscription",
-    price: 70,
-    icon: "📺"
-  },
-  {
-    name: "Apple TV",
-    detail: "Subscription",
-    price: 65,
-    icon: "🍎"
-  }
-];
+        <article class="product">
+          <div class="product-icon">🍎</div>
+          <h3>Apple TV</h3>
+          <p>Digital subscription</p>
+          <div class="price">GH₵65</div>
+          <button class="button" onclick="chooseProduct('Apple TV', 65)">
+            Buy Now
+          </button>
+        </article>
 
-const productSelect = document.getElementById("product");
-const productGrid = document.getElementById("productGrid");
+      </div>
+    </section>
 
-products.forEach((p, i) => {
-  const option = document.createElement("option");
+    <section class="section" id="order">
+      <div class="section-title">
+        <h2>Place Your Order</h2>
+        <p>Enter your details before proceeding to payment.</p>
+      </div>
 
-  option.value = i;
-  option.textContent =
-    `${p.name} — ${p.detail} (GH₵${p.price})`;
+      <div class="order-box">
+        <h2>🛒 Order Details</h2>
+        <p>Check your selected product and enter your contact details.</p>
 
-  productSelect.appendChild(option);
+        <form id="orderForm" onsubmit="continueToPayment(event)">
 
-  const card = document.createElement("div");
-  card.className = "card";
+          <label for="customerName">Your full name</label>
+          <input
+            id="customerName"
+            type="text"
+            placeholder="Enter your name"
+            required
+          >
 
-  const icon = document.createElement("div");
-  icon.className = "icon";
-  icon.textContent = p.icon;
+          <label for="customerWhatsApp">WhatsApp number</label>
+          <input
+            id="customerWhatsApp"
+            type="tel"
+            placeholder="e.g. 0240000000"
+            required
+          >
 
-  const title = document.createElement("h3");
-  title.textContent = p.name;
+          <label for="customerEmail">Email address (optional)</label>
+          <input
+            id="customerEmail"
+            type="email"
+            placeholder="Enter your email"
+          >
 
-  const detail = document.createElement("p");
-  detail.textContent = p.detail;
+          <label for="selectedProduct">Selected product</label>
+          <select id="selectedProduct" required onchange="syncSelectedProduct()">
+            <option value="">Select a product</option>
+            <option value="Apple Music - 3 Months|60">Apple Music — GH₵60</option>
+            <option value="Netflix Login - 3 Months|60">Netflix Login — GH₵60</option>
+            <option value="Snapchat Plus - 3 Months|75">Snapchat Plus — GH₵75</option>
+            <option value="Prime Video|70">Prime Video — GH₵70</option>
+            <option value="Apple TV|65">Apple TV — GH₵65</option>
+            <option value="iCloud Storage - 50GB|60">iCloud 50GB — GH₵60</option>
+            <option value="iCloud Storage - 200GB|90">iCloud 200GB — GH₵90</option>
+            <option value="iCloud Storage - 1TB|150">iCloud 1TB — GH₵150</option>
+            <option value="iCloud Storage - 2TB|230">iCloud 2TB — GH₵230</option>
+          </select>
 
-  const price = document.createElement("div");
-  price.className = "price";
-  price.textContent = `GH₵${p.price}`;
+          <div class="summary">
+            <div>
+              <span>Product</span>
+              <span id="summaryProduct">Not selected</span>
+            </div>
+            <div>
+              <span>Total</span>
+              <strong id="summaryPrice">GH₵0</strong>
+            </div>
+          </div>
 
-  const button = document.createElement("button");
-  button.type = "button";
-  button.textContent = "Buy Now";
-  button.dataset.index = i;
+          <button type="submit" class="button">
+            Continue to Payment →
+          </button>
 
-  card.append(icon, title, detail, price, button);
-  productGrid.appendChild(card);
-});
+          <p class="notice">
+            You will be redirected to our Moolre payment page.
+            Keep your payment receipt so your order can be checked.
+          </p>
 
-function updatePrice() {
-  const p = products[Number(productSelect.value)];
+        </form>
+      </div>
+    </section>
 
-  document.getElementById("total").textContent = p.price;
-}
+    <section class="section">
+      <div class="section-title">
+        <h2>Why Choose Us?</h2>
+      </div>
 
-productSelect.addEventListener("change", updatePrice);
+      <div class="features">
+        <div class="feature">
+          <h3>💜 Easy Ordering</h3>
+          <p>Choose your product and submit your details.</p>
+        </div>
 
-productGrid.addEventListener("click", event => {
-  const button = event.target.closest("button[data-index]");
+        <div class="feature">
+          <h3>💳 Convenient Payment</h3>
+          <p>Continue to our Moolre payment page.</p>
+        </div>
 
-  if (!button) return;
+        <div class="feature">
+          <h3>💬 Live Support</h3>
+          <p>Use the chat bubble to contact our support team.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  productSelect.value = button.dataset.index;
-  updatePrice();
+  <footer>
+    <p><strong>BEST BUY SUBSCRIPTIONS</strong></p>
+    <p>YOUR DIGITAL WORLD, ONE PLACE!</p>
+    <p>© <span id="year"></span> Best Buy Subscriptions. All rights reserved.</p>
+  </footer>
 
-  document.getElementById("order").scrollIntoView({
-    behavior: "smooth"
-  });
-});
+  <script>
+    const PAYMENT_LINK =
+      "https://pos.moolre.com/uHdayvFRc6SI9PpDEl0rWK1Ao7NO43";
 
-updatePrice();
+    let currentProduct = "";
+    let currentPrice = 0;
 
-document.getElementById("orderForm").addEventListener("submit", event => {
-  event.preventDefault();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-  const p = products[Number(productSelect.value)];
-  const customer = document.getElementById("customer").value.trim();
-  const contact = document.getElementById("contactNumber").value.trim();
-  const email = document.getElementById("email").value.trim();
+    function chooseProduct(name, price) {
+      currentProduct = name;
+      currentPrice = price;
 
-  if (!customer || !contact) {
-    alert("Please enter your name and WhatsApp number.");
-    return;
-  }
+      const selector = document.getElementById("selectedProduct");
 
-  const message =
-    `BEST BUY SUBSCRIPTIONS ORDER\n\n` +
-    `Name: ${customer}\n` +
-    `WhatsApp: ${contact}\n` +
-    `Email: ${email || "Not provided"}\n` +
-    `Product: ${p.name} - ${p.detail}\n` +
-    `Amount: GH₵${p.price}\n\n` +
-    `Please confirm my order.`;
+      for (const option of selector.options) {
+        if (!option.value) continue;
 
-  const confirmed = confirm(
-    message +
-    "\n\nPress OK to continue to the Moolre payment page."
-  );
+        const parts = option.value.split("|");
 
-  if (!confirmed) return;
+        if (parts[0] === name && Number(parts[1]) === price) {
+          selector.value = option.value;
+          break;
+        }
+      }
 
-  alert(
-    "Please check the amount shown on Moolre before paying. " +
-    "This payment link does not automatically guarantee that " +
-    "the selected product's price will be charged."
-  );
+      updateSummary();
 
-  window.location.href =
-    "https://pos.moolre.com/uHdayvFRc6SI9PpDEl0rWK1Ao7NO43";
-});
-</script>
+      document.getElementById("order").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {};
-var Tawk_LoadStart = new Date();
+    function updateIcloud() {
+      const parts = document.getElementById("icloudPlan").value.split("|");
 
-(function() {
-  var s1 = document.createElement("script");
-  var s0 = document.getElementsByTagName("script")[0];
+      document.getElementById("icloudPrice").textContent =
+        "GH₵" + parts[1];
+    }
 
-  s1.async = true;
-  s1.src = "https://embed.tawk.to/6ad6ed3f03cb4434bf5e3e3f/1k5botguj";
-  s1.charset = "UTF-8";
-  s1.setAttribute("crossorigin", "*");
+    function buyIcloud() {
+      const parts = document.getElementById("icloudPlan").value.split("|");
 
-  s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+      chooseProduct("iCloud Storage - " + parts[0], Number(parts[1]));
+    }
+
+    function syncSelectedProduct() {
+      const value = document.getElementById("selectedProduct").value;
+
+      if (!value) {
+        currentProduct = "";
+        currentPrice = 0;
+      } else {
+        const parts = value.split("|");
+        currentProduct = parts[0];
+        currentPrice = Number(parts[1]);
+      }
+
+      updateSummary();
+    }
+
+    function updateSummary() {
+      document.getElementById("summaryProduct").textContent =
+        currentProduct || "Not selected";
+
+      document.getElementById("summaryPrice").textContent =
+        "GH₵" + currentPrice;
+    }
+
+    function continueToPayment(event) {
+      event.preventDefault();
+
+      syncSelectedProduct();
+
+      if (!currentProduct || currentPrice <= 0) {
+        alert("Please select a product first.");
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerWhatsApp").value.trim();
+
+      if (!name || !phone) {
+        alert("Please enter your name and WhatsApp number.");
+        return;
+      }
+
+      const order = {
+        name: name,
+        phone: phone,
+        email: document.getElementById("customerEmail").value.trim(),
+        product: currentProduct,
+        price: currentPrice,
+        date: new Date().toISOString()
+      };
+
+      /*
+        Save order details in this browser for reference.
+        This is not a server-side order database.
+      */
+      try {
+        localStorage.setItem("bestBuyLastOrder", JSON.stringify(order));
+      } catch (error) {
+        console.log("Could not save local order details.");
+      }
+
+      alert(
+        "Order: " + currentProduct +
+        "\nTotal: GH₵" + currentPrice +
+        "\n\nYou will now continue to Moolre. Please keep your payment receipt."
+      );
+
+      window.location.href = PAYMENT_LINK;
+    }
+  </script>
+
+  <!-- Tawk.to Live Chat -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    var Tawk_LoadStart = new Date();
+
+    (function () {
+      var s1 = document.createElement("script");
+      var s0 = document.getElementsByTagName("script")[0];
+
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/6ad6ed3f03cb4434bf5e3e3f/1k5botguj";
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 
 </body>
 </html>
