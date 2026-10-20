@@ -3,152 +3,497 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best Buy Subscriptions</title>
+
+<title>BEST BUY SUBSCRIPTIONS | Digital Store</title>
+<meta name="description" content="Shop digital subscriptions at affordable prices with BEST BUY SUBSCRIPTIONS.">
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b0b14;color:#fff;font-family:Arial,sans-serif}
-header{background:#141424;padding:22px 16px;border-bottom:1px solid #292944}
-.logo{font-size:24px;font-weight:bold;color:#a78bfa}
-header p{color:#b9b9ca;margin-bottom:0}
-.hero{text-align:center;padding:40px 18px 25px}
-.hero h1{font-size:34px;margin-bottom:12px}
-.hero h1 span{color:#a78bfa}
-.hero p{color:#b8b8c9;line-height:1.6}
-.badge{display:inline-block;background:#22213a;color:#c4b5fd;padding:9px 14px;border-radius:25px;font-size:13px}
-h2{padding:0 16px;margin-top:30px}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:16px}
-.card{background:#171726;border:1px solid #303047;border-radius:15px;padding:17px 12px}
-.icon{font-size:34px}
-.card h3{font-size:16px;margin:12px 0 7px}
-.card p{font-size:13px;color:#aaaabd;min-height:30px}
-.price{font-size:21px;font-weight:bold;color:#c4b5fd;margin:14px 0}
-button,.buy{border:0;background:#8b5cf6;color:#fff;padding:12px 10px;border-radius:9px;width:100%;font-weight:bold;font-size:14px;cursor:pointer}
-button:active{opacity:.8}
-section.order{margin:16px;background:#171726;border:1px solid #303047;border-radius:15px;padding:20px}
-label{display:block;margin:14px 0 7px;color:#ddd}
-input,select,textarea{width:100%;padding:13px;border-radius:8px;border:1px solid #42425a;background:#0d0d18;color:#fff;font-size:15px}
-.total{font-size:22px;color:#c4b5fd;font-weight:bold;margin:18px 0}
-.note{color:#b5b5c6;font-size:12px;line-height:1.6}
-footer{text-align:center;padding:28px 15px;color:#9292a8;font-size:13px}
-@media(min-width:700px){.products{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1000px;margin:auto}.hero h1{font-size:48px}header{padding-left:5%;}}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0b0b14;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #141424;
+  padding: 22px 16px;
+  border-bottom: 1px solid #292944;
+  text-align: center;
+}
+
+.site-logo {
+  display: block;
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #a78bfa;
+}
+
+header p {
+  color: #b9b9ca;
+  margin-bottom: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 14px;
+  background: #10101d;
+  border-bottom: 1px solid #292944;
+}
+
+nav a {
+  color: #d8ccff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 42px 18px 25px;
+}
+
+.badge {
+  display: inline-block;
+  background: #22213a;
+  color: #c4b5fd;
+  padding: 9px 14px;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  margin: 20px 0 12px;
+}
+
+.hero h1 span {
+  color: #a78bfa;
+}
+
+.hero p {
+  color: #b8b8c9;
+  line-height: 1.7;
+}
+
+.section-title {
+  padding: 0 16px;
+  margin-top: 30px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  padding: 16px;
+}
+
+.card {
+  background: #171726;
+  border: 1px solid #303047;
+  border-radius: 15px;
+  padding: 17px 12px;
+}
+
+.icon {
+  font-size: 34px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 12px 0 7px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #aaaabd;
+  min-height: 28px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 21px;
+  font-weight: bold;
+  color: #c4b5fd;
+  margin: 14px 0;
+}
+
+button {
+  border: 0;
+  background: #8b5cf6;
+  color: #ffffff;
+  padding: 12px 10px;
+  border-radius: 9px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #7c3aed;
+}
+
+.order {
+  margin: 16px;
+  background: #171726;
+  border: 1px solid #303047;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.order h2 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 14px 0 7px;
+  color: #dddded;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid #42425a;
+  background: #0d0d18;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.total {
+  font-size: 22px;
+  color: #c4b5fd;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+.note {
+  color: #b5b5c6;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  color: #9292a8;
+  font-size: 13px;
+  border-top: 1px solid #292944;
+  margin-top: 35px;
+}
+
+@media (min-width: 700px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .site-logo {
+    width: 180px;
+    height: 180px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header>
+  <img
+    src="best-buy-logo.jpeg"
+    alt="BEST BUY SUBSCRIPTIONS Logo"
+    class="site-logo"
+  >
+
   <div class="logo">BEST BUY SUBSCRIPTIONS</div>
   <p>Your Digital World, One Place!</p>
 </header>
 
-<div class="hero">
-  <span class="badge">PREMIUM DIGITAL SUBSCRIPTIONS</span>
-  <h1>Upgrade Your <span>Digital Life.</span></h1>
-  <p>Shop your favourite digital subscriptions at affordable prices.<br>Simple ordering. Convenient payment.</p>
-</div>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#products">Shop</a>
+  <a href="#order">Order Now</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<h2>🛍️ Our Products</h2>
-<div class="products" id="products"></div>
+<main id="home">
 
-<section class="order" id="order">
-<h2 style="padding:0;margin-top:0">🛒 Place Your Order</h2>
-<p class="note">Choose a product and enter your contact details to continue.</p>
-<form id="orderForm">
-<label for="product">Select Product</label>
-<select id="product" required></select>
+  <section class="hero">
+    <span class="badge">PREMIUM DIGITAL SUBSCRIPTIONS</span>
 
-<div class="total">Total: GH₵<span id="total">60</span></div>
+    <h1>Upgrade Your <span>Digital Life.</span></h1>
 
-<label for="customer">Your Name</label>
-<input id="customer" required placeholder="Enter your name">
+    <p>
+      Shop your favourite digital subscriptions at affordable prices.<br>
+      Simple ordering. Convenient payment.
+    </p>
+  </section>
 
-<label for="contact">WhatsApp Number</label>
-<input id="contact" required type="tel" placeholder="e.g. 0241234567">
+  <h2 class="section-title" id="products">🛍️ Our Products</h2>
 
-<label for="email">Email (optional)</label>
-<input id="email" type="email" placeholder="you@example.com">
+  <div class="products" id="productGrid"></div>
 
-<button type="submit">Continue to Payment →</button>
-</form>
-<p class="note">Your order is not confirmed until payment is verified. Only purchase subscriptions you are authorized to resell.</p>
-</section>
+  <section class="order" id="order">
+    <h2>🛒 Place Your Order</h2>
 
-<footer>
-<strong>BEST BUY SUBSCRIPTIONS</strong>
-<p>Your Digital World, One Place!</p>
-<p>Prices are displayed in Ghana cedis (GH₵).</p>
+    <p class="note">
+      Choose your product and enter your contact details to continue.
+    </p>
+
+    <form id="orderForm">
+
+      <label for="product">Select Product</label>
+      <select id="product" required></select>
+
+      <div class="total">
+        Total: GH₵<span id="total">60</span>
+      </div>
+
+      <label for="customer">Your Name</label>
+      <input
+        id="customer"
+        type="text"
+        required
+        placeholder="Enter your name"
+      >
+
+      <label for="contactNumber">WhatsApp Number</label>
+      <input
+        id="contactNumber"
+        type="tel"
+        required
+        placeholder="e.g. 0241234567"
+      >
+
+      <label for="email">Email (optional)</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+      >
+
+      <button type="submit">Continue to Payment →</button>
+
+    </form>
+
+    <p class="note">
+      Orders are not confirmed until payment is verified.
+      Only purchase subscriptions through legitimate, authorized methods.
+    </p>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <strong>BEST BUY SUBSCRIPTIONS</strong>
+  <p>Your Digital World, One Place!</p>
+  <p>All prices are in Ghana cedis (GH₵).</p>
+  <p>Need help? Use the live chat button on this page.</p>
 </footer>
 
 <script>
-const products=[
-{name:"Apple Music",detail:"3 Months",price:60,icon:"🍎"},
-{name:"Netflix Login",detail:"3 Months",price:60,icon:"🎬"},
-{name:"iCloud Storage",detail:"50GB",price:60,icon:"☁️"},
-{name:"iCloud Storage",detail:"200GB",price:90,icon:"☁️"},
-{name:"iCloud Storage",detail:"1TB",price:150,icon:"☁️"},
-{name:"iCloud Storage",detail:"2TB",price:230,icon:"☁️"},
-{name:"Snapchat Plus",detail:"3 Months",price:75,icon:"👻"},
-{name:"Prime Video",detail:"Subscription",price:70,icon:"📺"},
-{name:"Apple TV",detail:"Subscription",price:65,icon:"🍎"}
+const products = [
+  {
+    name: "Apple Music",
+    detail: "3 Months",
+    price: 60,
+    icon: "🍎"
+  },
+  {
+    name: "Netflix Login",
+    detail: "3 Months",
+    price: 60,
+    icon: "🎬"
+  },
+  {
+    name: "iCloud Storage",
+    detail: "50GB",
+    price: 60,
+    icon: "☁️"
+  },
+  {
+    name: "iCloud Storage",
+    detail: "200GB",
+    price: 90,
+    icon: "☁️"
+  },
+  {
+    name: "iCloud Storage",
+    detail: "1TB",
+    price: 150,
+    icon: "☁️"
+  },
+  {
+    name: "iCloud Storage",
+    detail: "2TB",
+    price: 230,
+    icon: "☁️"
+  },
+  {
+    name: "Snapchat Plus",
+    detail: "3 Months",
+    price: 75,
+    icon: "👻"
+  },
+  {
+    name: "Prime Video",
+    detail: "Subscription",
+    price: 70,
+    icon: "📺"
+  },
+  {
+    name: "Apple TV",
+    detail: "Subscription",
+    price: 65,
+    icon: "🍎"
+  }
 ];
 
-const productSelect=document.getElementById("product");
-const productGrid=document.getElementById("products");
+const productSelect = document.getElementById("product");
+const productGrid = document.getElementById("productGrid");
 
-products.forEach((p,i)=>{
- const option=document.createElement("option");
- option.value=i;
- option.textContent=p.name+" — "+p.detail+" (GH₵"+p.price+")";
- productSelect.appendChild(option);
+products.forEach((p, i) => {
+  const option = document.createElement("option");
 
- const card=document.createElement("div");
- card.className="card";
- card.innerHTML=`<div class="icon">${p.icon}</div>
- <h3>${p.name}</h3><p>${p.detail}</p>
- <div class="price">GH₵${p.price}</div>
- <button type="button" data-index="${i}">Buy Now</button>`;
- productGrid.appendChild(card);
+  option.value = i;
+  option.textContent =
+    `${p.name} — ${p.detail} (GH₵${p.price})`;
+
+  productSelect.appendChild(option);
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const icon = document.createElement("div");
+  icon.className = "icon";
+  icon.textContent = p.icon;
+
+  const title = document.createElement("h3");
+  title.textContent = p.name;
+
+  const detail = document.createElement("p");
+  detail.textContent = p.detail;
+
+  const price = document.createElement("div");
+  price.className = "price";
+  price.textContent = `GH₵${p.price}`;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = "Buy Now";
+  button.dataset.index = i;
+
+  card.append(icon, title, detail, price, button);
+  productGrid.appendChild(card);
 });
 
-function updatePrice(){
- document.getElementById("total").textContent=products[Number(productSelect.value)].price;
+function updatePrice() {
+  const p = products[Number(productSelect.value)];
+
+  document.getElementById("total").textContent = p.price;
 }
-productSelect.addEventListener("change",updatePrice);
-productGrid.addEventListener("click",e=>{
- const btn=e.target.closest("button[data-index]");
- if(!btn)return;
- productSelect.value=btn.dataset.index;
- updatePrice();
- document.getElementById("order").scrollIntoView({behavior:"smooth"});
+
+productSelect.addEventListener("change", updatePrice);
+
+productGrid.addEventListener("click", event => {
+  const button = event.target.closest("button[data-index]");
+
+  if (!button) return;
+
+  productSelect.value = button.dataset.index;
+  updatePrice();
+
+  document.getElementById("order").scrollIntoView({
+    behavior: "smooth"
+  });
 });
+
 updatePrice();
 
-document.getElementById("orderForm").addEventListener("submit",e=>{
- e.preventDefault();
- const p=products[Number(productSelect.value)];
- const customer=document.getElementById("customer").value.trim();
- const contact=document.getElementById("contact").value.trim();
- const email=document.getElementById("email").value.trim();
+document.getElementById("orderForm").addEventListener("submit", event => {
+  event.preventDefault();
 
- const message=`BEST BUY SUBSCRIPTIONS ORDER\nName: ${customer}\nWhatsApp: ${contact}\nEmail: ${email||"Not provided"}\nProduct: ${p.name} - ${p.detail}\nAmount: GH₵${p.price}\n\nPlease confirm my order.`;
- const confirmed=confirm(message+"\n\nPress OK to continue to the payment page.");
- if(!confirmed)return;
+  const p = products[Number(productSelect.value)];
+  const customer = document.getElementById("customer").value.trim();
+  const contact = document.getElementById("contactNumber").value.trim();
+  const email = document.getElementById("email").value.trim();
 
- const paymentURL="https://pos.moolre.com/uHdayvFRc6SI9PpDEl0rWK1Ao7NO43";
- alert("Your order details have been prepared. The payment page may not automatically use the selected product amount. Check the amount shown on Moolre before paying.");
- window.location.href=paymentURL;
+  if (!customer || !contact) {
+    alert("Please enter your name and WhatsApp number.");
+    return;
+  }
+
+  const message =
+    `BEST BUY SUBSCRIPTIONS ORDER\n\n` +
+    `Name: ${customer}\n` +
+    `WhatsApp: ${contact}\n` +
+    `Email: ${email || "Not provided"}\n` +
+    `Product: ${p.name} - ${p.detail}\n` +
+    `Amount: GH₵${p.price}\n\n` +
+    `Please confirm my order.`;
+
+  const confirmed = confirm(
+    message +
+    "\n\nPress OK to continue to the Moolre payment page."
+  );
+
+  if (!confirmed) return;
+
+  alert(
+    "Please check the amount shown on Moolre before paying. " +
+    "This payment link does not automatically guarantee that " +
+    "the selected product's price will be charged."
+  );
+
+  window.location.href =
+    "https://pos.moolre.com/uHdayvFRc6SI9PpDEl0rWK1Ao7NO43";
 });
 </script>
-  <!--Start of Tawk.to Script-->
+
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6ad6ed3f03cb4434bf5e3e3f/1k5botguj';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
+
+(function() {
+  var s1 = document.createElement("script");
+  var s0 = document.getElementsByTagName("script")[0];
+
+  s1.async = true;
+  s1.src = "https://embed.tawk.to/6ad6ed3f03cb4434bf5e3e3f/1k5botguj";
+  s1.charset = "UTF-8";
+  s1.setAttribute("crossorigin", "*");
+
+  s0.parentNode.insertBefore(s1, s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
 </body>
 </html>
