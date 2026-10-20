@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Buy Subscriptions</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0b14;color:#fff;font-family:Arial,sans-serif}
+header{background:#141424;padding:22px 16px;border-bottom:1px solid #292944}
+.logo{font-size:24px;font-weight:bold;color:#a78bfa}
+header p{color:#b9b9ca;margin-bottom:0}
+.hero{text-align:center;padding:40px 18px 25px}
+.hero h1{font-size:34px;margin-bottom:12px}
+.hero h1 span{color:#a78bfa}
+.hero p{color:#b8b8c9;line-height:1.6}
+.badge{display:inline-block;background:#22213a;color:#c4b5fd;padding:9px 14px;border-radius:25px;font-size:13px}
+h2{padding:0 16px;margin-top:30px}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;padding:16px}
+.card{background:#171726;border:1px solid #303047;border-radius:15px;padding:17px 12px}
+.icon{font-size:34px}
+.card h3{font-size:16px;margin:12px 0 7px}
+.card p{font-size:13px;color:#aaaabd;min-height:30px}
+.price{font-size:21px;font-weight:bold;color:#c4b5fd;margin:14px 0}
+button,.buy{border:0;background:#8b5cf6;color:#fff;padding:12px 10px;border-radius:9px;width:100%;font-weight:bold;font-size:14px;cursor:pointer}
+button:active{opacity:.8}
+section.order{margin:16px;background:#171726;border:1px solid #303047;border-radius:15px;padding:20px}
+label{display:block;margin:14px 0 7px;color:#ddd}
+input,select,textarea{width:100%;padding:13px;border-radius:8px;border:1px solid #42425a;background:#0d0d18;color:#fff;font-size:15px}
+.total{font-size:22px;color:#c4b5fd;font-weight:bold;margin:18px 0}
+.note{color:#b5b5c6;font-size:12px;line-height:1.6}
+footer{text-align:center;padding:28px 15px;color:#9292a8;font-size:13px}
+@media(min-width:700px){.products{grid-template-columns:repeat(3,minmax(0,1fr));max-width:1000px;margin:auto}.hero h1{font-size:48px}header{padding-left:5%;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">BEST BUY SUBSCRIPTIONS</div>
+  <p>Your Digital World, One Place!</p>
+</header>
 
+<div class="hero">
+  <span class="badge">PREMIUM DIGITAL SUBSCRIPTIONS</span>
+  <h1>Upgrade Your <span>Digital Life.</span></h1>
+  <p>Shop your favourite digital subscriptions at affordable prices.<br>Simple ordering. Convenient payment.</p>
+</div>
+
+<h2>🛍️ Our Products</h2>
+<div class="products" id="products"></div>
+
+<section class="order" id="order">
+<h2 style="padding:0;margin-top:0">🛒 Place Your Order</h2>
+<p class="note">Choose a product and enter your contact details to continue.</p>
+<form id="orderForm">
+<label for="product">Select Product</label>
+<select id="product" required></select>
+
+<div class="total">Total: GH₵<span id="total">60</span></div>
+
+<label for="customer">Your Name</label>
+<input id="customer" required placeholder="Enter your name">
+
+<label for="contact">WhatsApp Number</label>
+<input id="contact" required type="tel" placeholder="e.g. 0241234567">
+
+<label for="email">Email (optional)</label>
+<input id="email" type="email" placeholder="you@example.com">
+
+<button type="submit">Continue to Payment →</button>
+</form>
+<p class="note">Your order is not confirmed until payment is verified. Only purchase subscriptions you are authorized to resell.</p>
+</section>
+
+<footer>
+<strong>BEST BUY SUBSCRIPTIONS</strong>
+<p>Your Digital World, One Place!</p>
+<p>Prices are displayed in Ghana cedis (GH₵).</p>
+</footer>
+
+<script>
+const products=[
+{name:"Apple Music",detail:"3 Months",price:60,icon:"🍎"},
+{name:"Netflix Login",detail:"3 Months",price:60,icon:"🎬"},
+{name:"iCloud Storage",detail:"50GB",price:60,icon:"☁️"},
+{name:"iCloud Storage",detail:"200GB",price:90,icon:"☁️"},
+{name:"iCloud Storage",detail:"1TB",price:150,icon:"☁️"},
+{name:"iCloud Storage",detail:"2TB",price:230,icon:"☁️"},
+{name:"Snapchat Plus",detail:"3 Months",price:75,icon:"👻"},
+{name:"Prime Video",detail:"Subscription",price:70,icon:"📺"},
+{name:"Apple TV",detail:"Subscription",price:65,icon:"🍎"}
+];
+
+const productSelect=document.getElementById("product");
+const productGrid=document.getElementById("products");
+
+products.forEach((p,i)=>{
+ const option=document.createElement("option");
+ option.value=i;
+ option.textContent=p.name+" — "+p.detail+" (GH₵"+p.price+")";
+ productSelect.appendChild(option);
+
+ const card=document.createElement("div");
+ card.className="card";
+ card.innerHTML=`<div class="icon">${p.icon}</div>
+ <h3>${p.name}</h3><p>${p.detail}</p>
+ <div class="price">GH₵${p.price}</div>
+ <button type="button" data-index="${i}">Buy Now</button>`;
+ productGrid.appendChild(card);
+});
+
+function updatePrice(){
+ document.getElementById("total").textContent=products[Number(productSelect.value)].price;
+}
+productSelect.addEventListener("change",updatePrice);
+productGrid.addEventListener("click",e=>{
+ const btn=e.target.closest("button[data-index]");
+ if(!btn)return;
+ productSelect.value=btn.dataset.index;
+ updatePrice();
+ document.getElementById("order").scrollIntoView({behavior:"smooth"});
+});
+updatePrice();
+
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const p=products[Number(productSelect.value)];
+ const customer=document.getElementById("customer").value.trim();
+ const contact=document.getElementById("contact").value.trim();
+ const email=document.getElementById("email").value.trim();
+
+ const message=`BEST BUY SUBSCRIPTIONS ORDER\nName: ${customer}\nWhatsApp: ${contact}\nEmail: ${email||"Not provided"}\nProduct: ${p.name} - ${p.detail}\nAmount: GH₵${p.price}\n\nPlease confirm my order.`;
+ const confirmed=confirm(message+"\n\nPress OK to continue to the payment page.");
+ if(!confirmed)return;
+
+ const paymentURL="https://pos.moolre.com/uHdayvFRc6SI9PpDEl0rWK1Ao7NO43";
+ alert("Your order details have been prepared. The payment page may not automatically use the selected product amount. Check the amount shown on Moolre before paying.");
+ window.location.href=paymentURL;
+});
+</script>
+</body>
+</html>
